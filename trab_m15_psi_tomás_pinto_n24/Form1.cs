@@ -20,12 +20,6 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             if (!File.Exists(name))
                 db_handler.create_db(name);
-
-
-            //items_handler.Create("Cobble", "A tone of stone", utils.ImageToArray(Directory.GetCurrentDirectory() + "\\image.jpg"));
-
-            inventories_handler.Update(1,1,5,12);
-
         }
     }
 }
