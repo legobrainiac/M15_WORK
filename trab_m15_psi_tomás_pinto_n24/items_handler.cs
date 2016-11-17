@@ -10,17 +10,9 @@
 	purpose:	Handles CRUD for table "items"
 *********************************************************************/
 
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
-using System.Collections.Specialized;
-using System.IO;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {

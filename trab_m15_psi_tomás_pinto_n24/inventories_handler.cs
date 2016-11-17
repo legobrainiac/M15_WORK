@@ -10,17 +10,9 @@
 	purpose:	Handles CRUD for table "inventories"
 *********************************************************************/
 
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
-using System.Collections.Specialized;
-using System.IO;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -32,6 +24,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         public int id_player;
         public int id_item;
         public int item_count;
+        public DataTable inv_dt;
 
         //Constructors
         public inventories_handler(int id, int id_player, int id_item, int item_count)
@@ -40,6 +33,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             this.id_player = id_player;
             this.id_item = id_item;
             this.item_count = item_count;
+            this.item_dt = null;
         }
 
         public inventories_handler() { }
@@ -99,7 +93,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             return db_handler.instance.query(sql);
         }
 
-        public static inventories_handler ReadAll(int id)
+        public static inventories_handler Read(int id)
         {
             string sql = $"select id, id_player, id_item, item_count from inventories where id = {id}";
 
@@ -112,6 +106,7 @@ namespace trab_m15_psi_tomás_pinto_n24
                 inv_item.id_player = result.Rows[0].Field<int>(1);
                 inv_item.id_item = result.Rows[0].Field<int>(2);
                 inv_item.item_count = result.Rows[0].Field<int>(3);
+                inv_item.inv_dt = result;
             }
 
             return inv_item;
