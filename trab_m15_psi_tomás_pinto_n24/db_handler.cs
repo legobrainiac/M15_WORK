@@ -1,4 +1,16 @@
-﻿using System;
+﻿/********************************************************************
+	created:	2016/11/17
+	created:	17:11:2016   16:32
+	filename: 	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\db_handler.cs
+	file path:	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24
+	file base:	db_handler
+	file ext:	cs
+	author:		Tomás António Sanches Pinto
+	
+	purpose:	Control connections to the database
+*********************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,6 +20,7 @@ using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using System.Collections.Specialized;
+using System.IO;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -17,7 +30,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         private string connection_string;
 
         //publics
-        SqlConnection db_connection;
+        public SqlConnection db_connection;
 
         //Singleton
         private static db_handler db;
@@ -36,7 +49,8 @@ namespace trab_m15_psi_tomás_pinto_n24
         //Constructor
         public db_handler()
         {
-            connection_string = ConfigurationManager.ConnectionStrings["sql"].ToString();
+            string name = Directory.GetCurrentDirectory() + "\\m15_trab.mdf";
+            connection_string = $"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = {name}; Integrated Security = True; Connect Timeout = 30";
             db_connection = new SqlConnection(connection_string);
             db_connection.Open();
 
