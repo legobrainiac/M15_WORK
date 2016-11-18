@@ -21,7 +21,7 @@ namespace trab_m15_psi_tomás_pinto_n24
                     fs.Read(data, 0, (int)fs.Length);
                 }
             }
-            catch (System.Exception ex)
+            catch 
             {
                 return null;
             }
@@ -38,10 +38,16 @@ namespace trab_m15_psi_tomás_pinto_n24
                     fs.Write(image, 0, image.GetUpperBound(0));
                 }
             }
-            catch (System.Exception ex)
+            catch
             {
                 return;
             }
+        }
+
+        //Self explanatory
+        static public string ReadFile(string file)
+        {
+            return File.ReadAllText(file);
         }
     }
 }
