@@ -16,7 +16,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frm_main());
         }
     }
 }

@@ -112,6 +112,12 @@ namespace trab_m15_psi_tomás_pinto_n24
                         create index idx_players_name on players(name);
                         ";
             command = new SqlCommand(str_sql, server_connection);
+
+            instance.query("create view list_items as (select * from items);");
+            instance.query("create view list_items_recipe as (select * from items_recipe);");
+            instance.query("create view list_players as (select * from players);");
+            instance.query("create view list_inventories_items as (select * from inventories);");
+
             command.ExecuteNonQuery();
         }
 

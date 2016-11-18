@@ -4,7 +4,6 @@ create table items
 	name varchar(50) unique not null,
 	description varchar(140) default '...',
 	item_image image,
-
 )
 
 create table items_recipe
@@ -30,3 +29,8 @@ create table inventories
 
 create index idx_items_name on items(name);
 create index idx_players_name on players(name);
+
+create view list_items as (select * from items);
+create view list_items_recipe as (select * from items_recipe);
+create view list_players as (select * from players);
+create view list_inventories_items as (select * from inventories);

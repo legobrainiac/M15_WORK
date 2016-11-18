@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Data;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
-    public partial class Form1 : Form
+    public partial class frm_main : Form
     {
-        public Form1()
+        public frm_main()
         {
             InitializeComponent();
         }
@@ -20,6 +21,23 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             if (!File.Exists(name))
                 db_handler.create_db(name);
+        }
+
+        private void listRecipePerItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from list_items;";
+            dgv_main.DataSource = db_handler.instance.query(sql);
+        }
+
+        private void listPlayersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from list_players;";
+            dgv_main.DataSource = db_handler.instance.query(sql);
         }
     }
 }
