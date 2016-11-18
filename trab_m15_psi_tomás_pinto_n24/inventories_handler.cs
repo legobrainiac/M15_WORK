@@ -33,7 +33,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             this.id_player = id_player;
             this.id_item = id_item;
             this.item_count = item_count;
-            this.item_dt = null;
+            this.inv_dt = null;
         }
 
         public inventories_handler() { }
@@ -52,7 +52,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         }
 
         /*
-         * -1 is the value to leave if you do not want to update the value
+         * id_player, id_item and item_count default to -1 if not to be edited
          */
         public static void Update(int id, int id_player = -1, int id_item = -1, int item_count = -1)
         {
