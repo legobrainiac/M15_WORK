@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trab_m15_psi_tomás_pinto_n24", "trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24.csproj", "{E24C7222-0D7E-4EA9-8C63-76F05B74A2D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "trab_m15_psi_tomas_pinto_n24", "trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomas_pinto_n24.csproj", "{E24C7222-0D7E-4EA9-8C63-76F05B74A2D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

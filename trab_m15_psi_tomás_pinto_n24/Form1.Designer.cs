@@ -30,17 +30,17 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemRecipesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemRecipesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listRecipePerItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecipeForItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removePlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listInventoryPerPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giveTakeItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listInventoryPerPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_main = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
@@ -69,33 +69,6 @@
             this.itemsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
-            // itemRecipesToolStripMenuItem
-            // 
-            this.itemRecipesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listRecipePerItemToolStripMenuItem,
-            this.addRecipeForItemToolStripMenuItem});
-            this.itemRecipesToolStripMenuItem.Name = "itemRecipesToolStripMenuItem";
-            this.itemRecipesToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
-            this.itemRecipesToolStripMenuItem.Text = "Item Recipes";
-            // 
-            // playersToolStripMenuItem
-            // 
-            this.playersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listPlayersToolStripMenuItem,
-            this.removePlayersToolStripMenuItem,
-            this.giveTakeItemsToolStripMenuItem});
-            this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
-            this.playersToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.playersToolStripMenuItem.Text = "Players";
-            // 
-            // inventoriesToolStripMenuItem
-            // 
-            this.inventoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listInventoryPerPlayersToolStripMenuItem});
-            this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
-            this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.inventoriesToolStripMenuItem.Text = "Inventories";
-            // 
             // listItemsToolStripMenuItem
             // 
             this.listItemsToolStripMenuItem.Name = "listItemsToolStripMenuItem";
@@ -108,6 +81,15 @@
             this.addNewItemsToolStripMenuItem.Name = "addNewItemsToolStripMenuItem";
             this.addNewItemsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.addNewItemsToolStripMenuItem.Text = "Add / Remove Items";
+            // 
+            // itemRecipesToolStripMenuItem
+            // 
+            this.itemRecipesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listRecipePerItemToolStripMenuItem,
+            this.addRecipeForItemToolStripMenuItem});
+            this.itemRecipesToolStripMenuItem.Name = "itemRecipesToolStripMenuItem";
+            this.itemRecipesToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.itemRecipesToolStripMenuItem.Text = "Item Recipes";
             // 
             // listRecipePerItemToolStripMenuItem
             // 
@@ -122,6 +104,16 @@
             this.addRecipeForItemToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.addRecipeForItemToolStripMenuItem.Text = "Add / Remove Recipe for Item";
             // 
+            // playersToolStripMenuItem
+            // 
+            this.playersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listPlayersToolStripMenuItem,
+            this.removePlayersToolStripMenuItem,
+            this.giveTakeItemsToolStripMenuItem});
+            this.playersToolStripMenuItem.Name = "playersToolStripMenuItem";
+            this.playersToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.playersToolStripMenuItem.Text = "Players";
+            // 
             // listPlayersToolStripMenuItem
             // 
             this.listPlayersToolStripMenuItem.Name = "listPlayersToolStripMenuItem";
@@ -134,18 +126,27 @@
             this.removePlayersToolStripMenuItem.Name = "removePlayersToolStripMenuItem";
             this.removePlayersToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.removePlayersToolStripMenuItem.Text = "Add / Remove players";
-            // 
-            // listInventoryPerPlayersToolStripMenuItem
-            // 
-            this.listInventoryPerPlayersToolStripMenuItem.Name = "listInventoryPerPlayersToolStripMenuItem";
-            this.listInventoryPerPlayersToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.listInventoryPerPlayersToolStripMenuItem.Text = "List inventory per Players";
+            this.removePlayersToolStripMenuItem.Click += new System.EventHandler(this.removePlayersToolStripMenuItem_Click);
             // 
             // giveTakeItemsToolStripMenuItem
             // 
             this.giveTakeItemsToolStripMenuItem.Name = "giveTakeItemsToolStripMenuItem";
             this.giveTakeItemsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.giveTakeItemsToolStripMenuItem.Text = "Give / Take Items";
+            // 
+            // inventoriesToolStripMenuItem
+            // 
+            this.inventoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listInventoryPerPlayersToolStripMenuItem});
+            this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
+            this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.inventoriesToolStripMenuItem.Text = "Inventories";
+            // 
+            // listInventoryPerPlayersToolStripMenuItem
+            // 
+            this.listInventoryPerPlayersToolStripMenuItem.Name = "listInventoryPerPlayersToolStripMenuItem";
+            this.listInventoryPerPlayersToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.listInventoryPerPlayersToolStripMenuItem.Text = "List inventory per Players";
             // 
             // dgv_main
             // 
@@ -169,6 +170,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frm_main";
             this.Text = "Main Panel";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

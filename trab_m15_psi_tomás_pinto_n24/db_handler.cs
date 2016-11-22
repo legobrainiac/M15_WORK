@@ -62,6 +62,18 @@ namespace trab_m15_psi_tomás_pinto_n24
             }
         }
 
+        public void CloseConnection()
+        {
+            try
+            {
+                db_connection.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Could not close connection...");
+            }
+        }
+
         //DB Creater
         public static void create_db(string name)
         {

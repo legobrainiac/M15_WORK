@@ -40,5 +40,16 @@ namespace trab_m15_psi_tomás_pinto_n24
             string sql = "select * from list_players;";
             dgv_main.DataSource = db_handler.instance.query(sql);
         }
+
+        private void removePlayersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            player_ar ar = new player_ar();
+            ar.Show();
+        }
+
+        private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            db_handler.instance.CloseConnection();
+        }
     }
 }

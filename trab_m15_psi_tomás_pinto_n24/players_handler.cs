@@ -67,7 +67,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         public static void Update(int id, string name)
         {
-            string sql = "update players set name = @name";
+            string sql = "update players set name = @name where id = @id";
 
             try
             {
@@ -87,6 +87,13 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             string sql = $"delete from players where id = {id}";
             db_handler.instance.query(sql);
+        }
+
+        public static int NextId()
+        {
+            string sql = $"select (ident_current('players') + 1) as i";
+            var tbl = db_handler.instance.query(sql);
+            return int.Parse(tbl.Rows[0][0].ToString());
         }
     }
 }
