@@ -1,11 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿/********************************************************************
+	created:	2016/11/22
+	created:	22:11:2016   10:56
+	filename: 	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\player_ar.cs
+	file path:	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24
+	file base:	player_ar
+	file ext:	cs
+	author:		Tomás António Sanches Pinto
+	
+	purpose:	For for players
+*********************************************************************/
+
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace trab_m15_psi_tomás_pinto_n24
@@ -31,18 +37,19 @@ namespace trab_m15_psi_tomás_pinto_n24
             update();
         }
 
+        //Updates the datagridview and next id txt box
         private void update()
         {
             dgv_players.DataSource = db_handler.instance.query("select * from list_players");
             txt_nextid.Text = players_handler.NextId().ToString();
         }
 
+        //Clears all the textboxes
         private void clear()
         {
             tb_name.Clear();
             tb_id.Clear();
             tb_name_edit.Clear();
-
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
@@ -56,10 +63,13 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             clear();
             DataTable tbl = dgv_players.DataSource as DataTable;
-            sel_id = int.Parse(tbl.Rows[e.RowIndex][0].ToString());
-
-            tb_name_edit.Text = tbl.Rows[e.RowIndex].Field<string>(1);
-            tb_id.Text = sel_id.ToString();
+            try
+            {
+                sel_id = int.Parse(tbl.Rows[e.RowIndex][0].ToString());
+                tb_name_edit.Text = tbl.Rows[e.RowIndex].Field<string>(1);
+                tb_id.Text = sel_id.ToString();
+            }
+            catch {}
         }
 
         private void btn_remove_Click(object sender, EventArgs e)

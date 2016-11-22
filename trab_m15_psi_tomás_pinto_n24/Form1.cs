@@ -1,7 +1,18 @@
-﻿using System;
+﻿/********************************************************************
+	created:	2016/11/22
+	created:	22:11:2016   10:55
+	filename: 	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\form1.cs
+	file path:	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24
+	file base:	form1
+	file ext:	cs
+	author:		Tomás António Sanches Pinto
+	
+	purpose:	Main form
+*********************************************************************/
+
+using System;
 using System.Windows.Forms;
 using System.IO;
-using System.Data;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -50,6 +61,19 @@ namespace trab_m15_psi_tomás_pinto_n24
         private void frm_main_FormClosing(object sender, FormClosingEventArgs e)
         {
             db_handler.instance.CloseConnection();
+        }
+
+        private void listInventoryPerPlayersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from list_inventories_items order by id_player";
+            dgv_main.DataSource = db_handler.instance.query(sql);
+        }
+
+        private void addNewItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var item_ar_form = new items_ar();
+
+            item_ar_form.Show();
         }
     }
 }

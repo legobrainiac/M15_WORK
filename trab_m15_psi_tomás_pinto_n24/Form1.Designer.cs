@@ -81,6 +81,7 @@
             this.addNewItemsToolStripMenuItem.Name = "addNewItemsToolStripMenuItem";
             this.addNewItemsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.addNewItemsToolStripMenuItem.Text = "Add / Remove Items";
+            this.addNewItemsToolStripMenuItem.Click += new System.EventHandler(this.addNewItemsToolStripMenuItem_Click);
             // 
             // itemRecipesToolStripMenuItem
             // 
@@ -147,6 +148,7 @@
             this.listInventoryPerPlayersToolStripMenuItem.Name = "listInventoryPerPlayersToolStripMenuItem";
             this.listInventoryPerPlayersToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.listInventoryPerPlayersToolStripMenuItem.Text = "List inventory per Players";
+            this.listInventoryPerPlayersToolStripMenuItem.Click += new System.EventHandler(this.listInventoryPerPlayersToolStripMenuItem_Click);
             // 
             // dgv_main
             // 

@@ -13,6 +13,8 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -93,6 +95,28 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             string sql = "select * from items";
             return db_handler.instance.query(sql);
+        }
+
+        //Returns all items in a list of objects as to be used in comboboxes
+        public static List<items_handler> ReadAllList()
+        {
+            string sql = "select * from items";
+            var list = new List<items_handler>();
+            var item = new items_handler();
+            var result = db_handler.instance.query(sql);
+
+            foreach (DataRow obj in result.Rows)
+            {
+                
+                item.id = obj.Field<int>(0);
+                item.name = obj.Field<string>(1);
+                item.description = obj.Field<string>(2);
+                item.image = obj.Field<byte[]>(3);
+                item.item_dt = result;
+                list.Add(item);
+            }
+
+            return list;
         }
 
         public static items_handler Read(int id)
