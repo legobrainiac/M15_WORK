@@ -13,6 +13,7 @@
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -31,6 +32,11 @@ namespace trab_m15_psi_tomás_pinto_n24
         }
 
         public players_handler() { }
+
+        public override string ToString()
+        {
+            return $"{name} - {id}";
+        }
 
         //CRUD
         public static void Create(string name)
@@ -63,6 +69,24 @@ namespace trab_m15_psi_tomás_pinto_n24
             }
 
             return player;
+        }
+
+        public static List<players_handler> ReadAllList()
+        {
+            string sql = "select * from players";
+            var list = new List<players_handler>();
+            var item = new players_handler();
+            var result = db_handler.instance.query(sql);
+
+            foreach (DataRow obj in result.Rows)
+            {
+                item = new players_handler();
+                item.id = obj.Field<int>(0);
+                item.name = obj.Field<string>(1);
+                list.Add(item);
+            }
+
+            return list;
         }
 
         public static void Update(int id, string name)

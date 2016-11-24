@@ -68,7 +68,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             {
                 db_connection.Close();
             }
-            catch (System.Exception ex)
+            catch 
             {
                 MessageBox.Show("Could not close connection...");
             }

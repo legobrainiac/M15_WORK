@@ -97,7 +97,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             return db_handler.instance.query(sql);
         }
 
-        //Returns all items in a list of objects as to be used in comboboxes
+        //Returns all items in a list of objects as to be used in combo boxes
         public static List<items_handler> ReadAllList()
         {
             string sql = "select * from items";
@@ -107,7 +107,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             foreach (DataRow obj in result.Rows)
             {
-                
+                item = new items_handler();
                 item.id = obj.Field<int>(0);
                 item.name = obj.Field<string>(1);
                 item.description = obj.Field<string>(2);

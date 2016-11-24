@@ -75,5 +75,11 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             item_ar_form.Show();
         }
+
+        private void giveTakeItemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var player_gt_form = new player_gt_items();
+            player_gt_form.Show();
+        }
     }
 }

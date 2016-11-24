@@ -1,8 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/********************************************************************
+	created:	2016/11/24
+	created:	24:11:2016   15:20
+	filename: 	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\utils.cs
+	file path:	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24
+	file base:	utils
+	file ext:	cs
+	author:		Tomás António Sanches Pinto
+	
+	purpose:	
+*********************************************************************/
+
 using System.IO;
 
 namespace trab_m15_psi_tomás_pinto_n24

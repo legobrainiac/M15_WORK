@@ -7,7 +7,7 @@
 	file ext:	cs
 	author:		Tomás António Sanches Pinto
 	
-	purpose:	For for items
+	purpose:	Form for items
 *********************************************************************/
 
 using System;
@@ -24,6 +24,8 @@ namespace trab_m15_psi_tomás_pinto_n24
 {
     public partial class items_ar : Form
     {
+        string filepath = null;
+
         public items_ar()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void items_ar_Load(object sender, EventArgs e)
         {
+            Update_dgv();
             //combo_box_items.DataSource = items_handler.ReadAllList();
         }
 
@@ -41,8 +44,50 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             if (result == DialogResult.OK)
             {
-                pb_image.Image = Image.FromFile(dialog.FileName);
+                filepath = dialog.FileName;
+                pb_image.Image = Image.FromFile(filepath);
             }
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            string name = txt_name.Text;
+            string description = txt_desc.Text;
+            byte[] image = new byte[0];
+
+            if (filepath == null || name == "")
+            {
+                MessageBox.Show("Fill all fields...");
+                return;
+            }
+
+            pb_image.Image = null;
+            GC.Collect();
+            image = utils.ImageToArray(filepath);
+            items_handler.Create(name, description, image);
+            Clear();
+        }
+
+        private void Clear()
+        {
+            filepath = null;
+            txt_desc.Text = null;
+            txt_name.Text = null;
+        }
+
+        private void Update_dgv()
+        {
+            dgv_items.DataSource = items_handler.ReadAll();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Update_dgv();            
+        }
+
+        private void tsb_autorestart_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = !timer1.Enabled;
         }
     }
 }

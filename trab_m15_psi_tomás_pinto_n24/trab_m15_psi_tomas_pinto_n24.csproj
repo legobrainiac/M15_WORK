@@ -74,6 +74,12 @@
     <Compile Include="player_ar.Designer.cs">
       <DependentUpon>player_ar.cs</DependentUpon>
     </Compile>
+    <Compile Include="player_gt_items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="player_gt_items.Designer.cs">
+      <DependentUpon>player_gt_items.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="utils.cs" />
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="player_ar.resx">
       <DependentUpon>player_ar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="player_gt_items.resx">
+      <DependentUpon>player_gt_items.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

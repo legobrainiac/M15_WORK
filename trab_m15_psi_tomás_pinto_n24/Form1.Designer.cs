@@ -134,6 +134,7 @@
             this.giveTakeItemsToolStripMenuItem.Name = "giveTakeItemsToolStripMenuItem";
             this.giveTakeItemsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.giveTakeItemsToolStripMenuItem.Text = "Give / Take Items";
+            this.giveTakeItemsToolStripMenuItem.Click += new System.EventHandler(this.giveTakeItemsToolStripMenuItem_Click);
             // 
             // inventoriesToolStripMenuItem
             // 
