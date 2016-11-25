@@ -119,8 +119,9 @@ namespace trab_m15_psi_tomás_pinto_n24
         }
 
         /*
-         *  Give the correct amount of an item of the specified id to a player of a specified id. 
+         *  Give the X amount of an item of the specified id to a player of a specified id. 
          *  It also checks if the player already has that item as to not create redundant data in the database.
+         *  Give can be used to take and give, assuming the item count polarity as taking and giving
          */
         public static void Give(int id_player, int id_item, int item_count)
         {

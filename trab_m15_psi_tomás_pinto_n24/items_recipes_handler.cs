@@ -100,5 +100,13 @@ namespace trab_m15_psi_tomás_pinto_n24
 
             return item_recipe;
         }
+
+        public static void AddRecipe(int craftable, int[] crafting_items)
+        {
+            for (int i = 0; i < crafting_items.Length; ++i)
+            {
+                Create(craftable, crafting_items[i]);
+            }
+        }
     }
 }

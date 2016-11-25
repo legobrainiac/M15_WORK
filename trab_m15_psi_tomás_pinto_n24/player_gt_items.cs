@@ -31,11 +31,26 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void btn_give_Click(object sender, EventArgs e)
         {
-            int item_count = int.Parse(txt_count.Text);
+            int item_count;
+            try
+            {
+                 item_count = int.Parse(txt_count.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Please enter a valid amount...");
+                return;
+            }
 
             players_handler p_handler = (players_handler)cb_players.Items[cb_players.SelectedIndex];
             items_handler i_handler = (items_handler)cb_item.Items[cb_item.SelectedIndex];
             inventories_handler.Give(p_handler.id, i_handler.id, item_count);
+            clear_frm();
+        }
+
+        private void clear_frm()
+        {
+            txt_count.Clear();
         }
     }
 }

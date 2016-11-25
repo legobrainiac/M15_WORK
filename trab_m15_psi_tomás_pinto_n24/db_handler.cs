@@ -75,7 +75,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         }
 
         //DB Creater
-        public static void create_db(string name)
+        public static void create_db(string name) //TODO: on delete cascade in all tables that need it
         {
             string db_name = System.IO.Path.GetFileNameWithoutExtension(name);
             var server_connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30");
