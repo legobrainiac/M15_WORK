@@ -65,7 +65,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void listInventoryPerPlayersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string sql = "select * from list_inventories_items order by id_player";
+            string sql = "select * from list_inventories_items";
             dgv_main.DataSource = db_handler.instance.query(sql);
         }
 

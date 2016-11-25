@@ -128,7 +128,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             instance.query("create view list_items as (select * from items);");
             instance.query("create view list_items_recipe as (select * from items_recipe);");
             instance.query("create view list_players as (select * from players);");
-            instance.query("create view list_inventories_items as (select * from inventories);");
+            instance.query("create view list_inventories_items as (select players.name as [Player Name], items.name as [Item Name],inventories.item_count as [Item Count] from inventories inner join players on inventories.id_player = players.id inner join items on inventories.id_item = items.id);");
 
             command.ExecuteNonQuery();
         }

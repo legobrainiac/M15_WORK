@@ -118,5 +118,23 @@ namespace trab_m15_psi_tomás_pinto_n24
             db_handler.instance.query(sql);
         }
 
+        /*
+         *  Give the correct amount of an item of the specified id to a player of a specified id. 
+         *  It also checks if the player already has that item as to not create redundant data in the database.
+         */
+        public static void Give(int id_player, int id_item, int item_count)
+        {
+            string sql =
+                $@"
+                    if exists(select * from inventories where id_player = {id_player} and id_item = {id_item})
+                        update inventories set item_count = item_count + {item_count} where id_player = {id_player} and id_item = {id_item}
+                    else
+                        insert into inventories(id_player, id_item, item_count) values ({id_player},{id_item},{item_count});
+                        
+                ";
+
+            db_handler.instance.query(sql);
+        }
+
     }
 }
