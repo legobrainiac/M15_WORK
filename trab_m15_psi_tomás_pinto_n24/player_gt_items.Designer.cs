@@ -98,8 +98,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cb_players);
             this.Controls.Add(this.cb_item);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "player_gt_items";
-            this.Text = "player_gt_items";
+            this.Text = "Players";
             this.Load += new System.EventHandler(this.player_gt_items_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

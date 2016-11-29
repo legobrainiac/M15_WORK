@@ -13,6 +13,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -107,6 +108,25 @@ namespace trab_m15_psi_tomás_pinto_n24
             {
                 Create(craftable, crafting_items[i]);
             }
+        }
+
+        public static List<items_recipes_handler> ReadAllList()
+        {
+            string sql = "select * from items_recipe";
+            var list = new List<items_recipes_handler>();
+            var item = new items_recipes_handler();
+            var result = db_handler.instance.query(sql);
+
+            foreach (DataRow obj in result.Rows)
+            {
+                item = new items_recipes_handler();
+                item.id = obj.Field<int>(0);
+                item.id_craftable = obj.Field<int>(1);
+                item.id_crafting_item = obj.Field<int>(2);
+                list.Add(item);
+            }
+
+            return list;
         }
     }
 }

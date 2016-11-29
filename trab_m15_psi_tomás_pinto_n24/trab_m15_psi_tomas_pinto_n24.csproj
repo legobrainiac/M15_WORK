@@ -67,6 +67,12 @@
     </Compile>
     <Compile Include="items_handler.cs" />
     <Compile Include="items_recipes_handler.cs" />
+    <Compile Include="item_recipe_ar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="item_recipe_ar.Designer.cs">
+      <DependentUpon>item_recipe_ar.cs</DependentUpon>
+    </Compile>
     <Compile Include="players_handler.cs" />
     <Compile Include="player_ar.cs">
       <SubType>Form</SubType>
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="items_ar.resx">
       <DependentUpon>items_ar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="item_recipe_ar.resx">
+      <DependentUpon>item_recipe_ar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="player_ar.resx">
       <DependentUpon>player_ar.cs</DependentUpon>

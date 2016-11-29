@@ -104,6 +104,7 @@
             this.addRecipeForItemToolStripMenuItem.Name = "addRecipeForItemToolStripMenuItem";
             this.addRecipeForItemToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.addRecipeForItemToolStripMenuItem.Text = "Add / Remove Recipe for Item";
+            this.addRecipeForItemToolStripMenuItem.Click += new System.EventHandler(this.addRecipeForItemToolStripMenuItem_Click);
             // 
             // playersToolStripMenuItem
             // 
@@ -171,6 +172,7 @@
             this.Controls.Add(this.dgv_main);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frm_main";
             this.Text = "Main Panel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_main_FormClosing);
