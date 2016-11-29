@@ -144,5 +144,19 @@ namespace trab_m15_psi_tomás_pinto_n24
             db_handler.instance.query(sql);
         }
 
+        //Gets the id of all items that form the items recipe
+        public static int[] RecipeIds(int id)
+        {
+            string sql = $"select id_crafting_item from items_recipe where id_craftable = {id}";
+            var list = new List<int>();
+            var result = db_handler.instance.query(sql);
+
+            foreach (DataRow obj in result.Rows)
+            {
+                list.Add(obj.Field<int>(0));
+            }
+
+            return list.ToArray();
+        }
     }
 }

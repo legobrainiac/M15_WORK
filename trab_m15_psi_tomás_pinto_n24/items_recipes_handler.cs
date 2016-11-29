@@ -102,7 +102,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             return item_recipe;
         }
 
-        public static void AddRecipe(int craftable, int[] crafting_items)
+        public static void AddRecipe(int craftable, int[] crafting_items) //TODO: Make it so it changes the recipe
         {
             for (int i = 0; i < crafting_items.Length; ++i)
             {

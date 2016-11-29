@@ -26,9 +26,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         private void Form1_Load(object sender, EventArgs e)
         {
             //Creates database in the executable directory
-            string name = Directory.GetCurrentDirectory() + "\\m15_trab.mdf";
-
-            Clipboard.SetText(utils.ReadFile(Directory.GetCurrentDirectory() + "\\trab_m15.sql"));
+            string name = Directory.GetCurrentDirectory() + "\\m15_db_trab.mdf";
 
             if (!File.Exists(name))
                 db_handler.create_db(name);

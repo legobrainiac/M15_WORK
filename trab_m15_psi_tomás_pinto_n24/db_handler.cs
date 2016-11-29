@@ -42,7 +42,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         //Constructor
         public db_handler()
         {
-            string name = Directory.GetCurrentDirectory() + "\\m15_trab.mdf";
+            string name = Directory.GetCurrentDirectory() + "\\m15_db_trab.mdf";
             connection_string = $"Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = {name}; Integrated Security = True; Connect Timeout = 30";
             db_connection = new SqlConnection(connection_string);
             db_connection.Open();
@@ -103,7 +103,7 @@ namespace trab_m15_psi_tomás_pinto_n24
                         (
 	                        id int identity primary key,
 	                        id_craftable int references items(id),
-	                        id_crafting_item int references items(id),
+	                        id_crafting_item int references items(id) on delete cascade,
                         )
 
                         create table players
@@ -115,8 +115,8 @@ namespace trab_m15_psi_tomás_pinto_n24
                         create table inventories
                         (
 	                        id int identity primary key,
-	                        id_player int not null references players(id),
-	                        id_item int not null references items(id),
+	                        id_player int not null references players(id) on delete cascade,
+	                        id_item int not null references items(id) on delete cascade,
 	                        item_count int not null default 0 check(item_count >= 0),
                         )
 
