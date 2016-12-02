@@ -26,10 +26,13 @@ namespace trab_m15_psi_tomás_pinto_n24
         private void Form1_Load(object sender, EventArgs e)
         {
             //Creates database in the executable directory
-            string name = Directory.GetCurrentDirectory() + "\\m15_db_trab.mdf";
+            string name = Directory.GetCurrentDirectory() + db_handler.name;
 
-            if (!File.Exists(name))
-                db_handler.create_db(name);
+            Clipboard.SetText(name);
+
+            if (File.Exists(name))
+                return;
+            db_handler.create_db(name);
         }
 
         private void listRecipePerItemToolStripMenuItem_Click(object sender, EventArgs e)
