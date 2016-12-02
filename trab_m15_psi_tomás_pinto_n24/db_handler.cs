@@ -15,7 +15,6 @@ using System.Data;
 using System.Windows.Forms;
 using System.IO;
 
-
 namespace trab_m15_psi_tomás_pinto_n24
 {
     class db_handler

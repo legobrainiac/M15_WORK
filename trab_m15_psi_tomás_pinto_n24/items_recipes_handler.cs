@@ -102,12 +102,11 @@ namespace trab_m15_psi_tomás_pinto_n24
             return item_recipe;
         }
 
-        public static void AddRecipe(int craftable, int[] crafting_items) //TODO: Make it so it changes the recipe
+        public static void AddRecipe(int craftable, int[] crafting_items)
         {
+            DeleteRecipe(craftable);
             for (int i = 0; i < crafting_items.Length; ++i)
-            {
                 Create(craftable, crafting_items[i]);
-            }
         }
 
         public static List<items_recipes_handler> ReadAllList()
@@ -127,6 +126,12 @@ namespace trab_m15_psi_tomás_pinto_n24
             }
 
             return list;
+        }
+
+        public static void DeleteRecipe(int item_id)
+        {
+            string sql = $"delete from items_recipe where id_craftable = {item_id}";
+            db_handler.instance.query(sql);
         }
     }
 }

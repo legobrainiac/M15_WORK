@@ -37,7 +37,7 @@
             // 
             // btn_add
             // 
-            this.btn_add.Location = new System.Drawing.Point(492, 295);
+            this.btn_add.Location = new System.Drawing.Point(138, 292);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(120, 23);
             this.btn_add.TabIndex = 1;
@@ -50,7 +50,7 @@
             this.clb_recipe_items.FormattingEnabled = true;
             this.clb_recipe_items.Location = new System.Drawing.Point(138, 25);
             this.clb_recipe_items.Name = "clb_recipe_items";
-            this.clb_recipe_items.Size = new System.Drawing.Size(120, 289);
+            this.clb_recipe_items.Size = new System.Drawing.Size(120, 259);
             this.clb_recipe_items.TabIndex = 4;
             // 
             // lb_items
@@ -84,7 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 321);
+            this.ClientSize = new System.Drawing.Size(270, 321);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lb_items);
