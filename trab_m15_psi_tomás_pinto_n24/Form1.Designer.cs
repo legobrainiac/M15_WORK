@@ -42,6 +42,7 @@
             this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listInventoryPerPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_main = new System.Windows.Forms.DataGridView();
+            this.listItemsTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +65,8 @@
             // 
             this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listItemsToolStripMenuItem,
-            this.addNewItemsToolStripMenuItem});
+            this.addNewItemsToolStripMenuItem,
+            this.listItemsTreeToolStripMenuItem});
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
             this.itemsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.itemsToolStripMenuItem.Text = "Items";
@@ -164,6 +166,13 @@
             this.dgv_main.Size = new System.Drawing.Size(599, 281);
             this.dgv_main.TabIndex = 1;
             // 
+            // listItemsTreeToolStripMenuItem
+            // 
+            this.listItemsTreeToolStripMenuItem.Name = "listItemsTreeToolStripMenuItem";
+            this.listItemsTreeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.listItemsTreeToolStripMenuItem.Text = "List Items Tree";
+            this.listItemsTreeToolStripMenuItem.Click += new System.EventHandler(this.listItemsTreeToolStripMenuItem_Click);
+            // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -201,6 +210,7 @@
         private System.Windows.Forms.ToolStripMenuItem listInventoryPerPlayersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giveTakeItemsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_main;
+        private System.Windows.Forms.ToolStripMenuItem listItemsTreeToolStripMenuItem;
     }
 }
 

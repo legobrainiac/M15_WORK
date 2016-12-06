@@ -13,6 +13,7 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Data;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -37,7 +38,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void listRecipePerItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string sql = "select * from list_items_recipe order by id_craftable;";
+            string sql = "select tbl1.name as Item, tbl2.name as [Crafting Item] from items_recipe inner join items tbl1 on tbl1.id=items_recipe.id_craftable inner join items tbl2 on tbl2.id = items_recipe.id_crafting_item";
             dgv_main.DataSource = db_handler.instance.query(sql);
         }
 
@@ -87,6 +88,12 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             var items_ar_recipe = new item_recipe_ar();
             items_ar_recipe.Show();
+        }
+
+        private void listItemsTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new recipe_tree_view();
+            frm.Show();
         }
     }
 }
