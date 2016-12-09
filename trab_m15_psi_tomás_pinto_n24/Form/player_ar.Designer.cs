@@ -32,14 +32,14 @@
             this.dgv_players = new System.Windows.Forms.DataGridView();
             this.btn_add = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txt_nextid = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tb_name = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_nextid = new System.Windows.Forms.TextBox();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_remove = new System.Windows.Forms.Button();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tb_name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tb_name_edit = new System.Windows.Forms.TextBox();
@@ -89,15 +89,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Players";
             // 
-            // txt_nextid
+            // label2
             // 
-            this.txt_nextid.Location = new System.Drawing.Point(47, 20);
-            this.txt_nextid.Name = "txt_nextid";
-            this.txt_nextid.ReadOnly = true;
-            this.txt_nextid.Size = new System.Drawing.Size(100, 20);
-            this.txt_nextid.TabIndex = 3;
-            this.txt_nextid.MouseLeave += new System.EventHandler(this.txt_nextid_MouseLeave);
-            this.txt_nextid.MouseHover += new System.EventHandler(this.txt_nextid_MouseHover);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Name";
+            // 
+            // tb_name
+            // 
+            this.tb_name.Location = new System.Drawing.Point(47, 47);
+            this.tb_name.Name = "tb_name";
+            this.tb_name.Size = new System.Drawing.Size(100, 20);
+            this.tb_name.TabIndex = 5;
             // 
             // label1
             // 
@@ -108,14 +114,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Next id";
             // 
-            // label2
+            // txt_nextid
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Name";
+            this.txt_nextid.Location = new System.Drawing.Point(47, 20);
+            this.txt_nextid.Name = "txt_nextid";
+            this.txt_nextid.ReadOnly = true;
+            this.txt_nextid.Size = new System.Drawing.Size(100, 20);
+            this.txt_nextid.TabIndex = 3;
+            this.txt_nextid.MouseLeave += new System.EventHandler(this.txt_nextid_MouseLeave);
+            this.txt_nextid.MouseHover += new System.EventHandler(this.txt_nextid_MouseHover);
             // 
             // btn_edit
             // 
@@ -139,7 +146,7 @@
             // 
             // tb_id
             // 
-            this.tb_id.Location = new System.Drawing.Point(52, 19);
+            this.tb_id.Location = new System.Drawing.Point(47, 19);
             this.tb_id.Name = "tb_id";
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(100, 20);
@@ -153,13 +160,6 @@
             this.label3.Size = new System.Drawing.Size(16, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Id";
-            // 
-            // tb_name
-            // 
-            this.tb_name.Location = new System.Drawing.Point(47, 47);
-            this.tb_name.Name = "tb_name";
-            this.tb_name.Size = new System.Drawing.Size(100, 20);
-            this.tb_name.TabIndex = 5;
             // 
             // label4
             // 
@@ -187,7 +187,7 @@
             // 
             // tb_name_edit
             // 
-            this.tb_name_edit.Location = new System.Drawing.Point(52, 45);
+            this.tb_name_edit.Location = new System.Drawing.Point(47, 45);
             this.tb_name_edit.Name = "tb_name_edit";
             this.tb_name_edit.Size = new System.Drawing.Size(100, 20);
             this.tb_name_edit.TabIndex = 7;

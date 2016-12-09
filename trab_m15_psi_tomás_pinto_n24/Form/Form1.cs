@@ -106,8 +106,8 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Bitmap bm = new Bitmap(this.dgv_main.Width, this.dgv_main.Height);
-            this.dgv_main.DrawToBitmap(bm, new Rectangle(0, 0, this.dgv_main.Width, this.dgv_main.Height));
+            Bitmap bm = new Bitmap(dgv_main.Width, dgv_main.Height);
+            dgv_main.DrawToBitmap(bm, new Rectangle(0, 0, dgv_main.Width, dgv_main.Height));
             e.Graphics.DrawImage(bm, 0, 0);
         }
     }
