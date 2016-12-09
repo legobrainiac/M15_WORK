@@ -33,8 +33,19 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            players_handler.Create(tb_name.Text);
-            update();
+            try
+            {
+                players_handler.Create(tb_name.Text);
+            }
+            catch
+            {
+                MessageBox.Show("You cant add an existing player!");
+            }
+            finally
+            {
+                update();
+                clear();
+            }
         }
 
         //Updates the datagridview and next id txt box
@@ -54,9 +65,19 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            players_handler.Update(sel_id, tb_name_edit.Text);
-            clear();
-            update();
+            try
+            {
+                players_handler.Update(sel_id, tb_name_edit.Text);
+            }
+            catch
+            {
+                MessageBox.Show("You cant set the name to that of an existing player!");
+            }
+            finally
+            {
+                update();
+                clear();
+            }
         }
 
         private void dgv_players_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -69,7 +90,7 @@ namespace trab_m15_psi_tomás_pinto_n24
                 tb_name_edit.Text = tbl.Rows[e.RowIndex].Field<string>(1);
                 tb_id.Text = sel_id.ToString();
             }
-            catch {}
+            catch { }
         }
 
         private void btn_remove_Click(object sender, EventArgs e)
@@ -94,7 +115,7 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             tt = new ToolTip();
             tt.IsBalloon = true;
-            tt.Show("ID may change if app is used by many people.", txt_nextid, 15, -35,1000);
+            tt.Show("ID may change if app is used by many people.", txt_nextid, 15, -35, 1000);
         }
 
         private void txt_nextid_MouseLeave(object sender, EventArgs e)
