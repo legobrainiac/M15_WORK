@@ -32,6 +32,7 @@
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listItemsTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemRecipesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listRecipePerItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addRecipeForItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,9 @@
             this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listInventoryPerPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_main = new System.Windows.Forms.DataGridView();
-            this.listItemsTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +56,8 @@
             this.itemsToolStripMenuItem,
             this.itemRecipesToolStripMenuItem,
             this.playersToolStripMenuItem,
-            this.inventoriesToolStripMenuItem});
+            this.inventoriesToolStripMenuItem,
+            this.printToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -84,6 +88,13 @@
             this.addNewItemsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.addNewItemsToolStripMenuItem.Text = "Add / Remove Items";
             this.addNewItemsToolStripMenuItem.Click += new System.EventHandler(this.addNewItemsToolStripMenuItem_Click);
+            // 
+            // listItemsTreeToolStripMenuItem
+            // 
+            this.listItemsTreeToolStripMenuItem.Name = "listItemsTreeToolStripMenuItem";
+            this.listItemsTreeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.listItemsTreeToolStripMenuItem.Text = "List Items Tree";
+            this.listItemsTreeToolStripMenuItem.Click += new System.EventHandler(this.listItemsTreeToolStripMenuItem_Click);
             // 
             // itemRecipesToolStripMenuItem
             // 
@@ -166,12 +177,20 @@
             this.dgv_main.Size = new System.Drawing.Size(599, 281);
             this.dgv_main.TabIndex = 1;
             // 
-            // listItemsTreeToolStripMenuItem
+            // printToolStripMenuItem
             // 
-            this.listItemsTreeToolStripMenuItem.Name = "listItemsTreeToolStripMenuItem";
-            this.listItemsTreeToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.listItemsTreeToolStripMenuItem.Text = "List Items Tree";
-            this.listItemsTreeToolStripMenuItem.Click += new System.EventHandler(this.listItemsTreeToolStripMenuItem_Click);
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // frm_main
             // 
@@ -211,6 +230,9 @@
         private System.Windows.Forms.ToolStripMenuItem giveTakeItemsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgv_main;
         private System.Windows.Forms.ToolStripMenuItem listItemsTreeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }
 

@@ -14,6 +14,7 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
+using System.Drawing;
 
 namespace trab_m15_psi_tomás_pinto_n24
 {
@@ -94,6 +95,20 @@ namespace trab_m15_psi_tomás_pinto_n24
         {
             var frm = new recipe_tree_view();
             frm.Show();
+        }
+
+        //Found in http://stackoverflow.com/questions/561174/printing-a-net-datagridview
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printDialog1.ShowDialog();
+            printDocument1.Print();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dgv_main.Width, this.dgv_main.Height);
+            this.dgv_main.DrawToBitmap(bm, new Rectangle(0, 0, this.dgv_main.Width, this.dgv_main.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
         }
     }
 }
