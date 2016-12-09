@@ -1,4 +1,23 @@
-﻿using System;
+﻿/********************************************************************
+    Copyright (C) 2016-2017 Tomás António Sanches Pinto <tomas.antonio.sp@gmail.com>
+     
+    This file is part of M14_14_TomásPinto_24.
+    
+    M14_14_TomásPinto_24 can not be copied and/or distributed without the express
+    permission of Tomás António Sanches Pinto
+
+	created:	2016/12/09
+	created:	9:12:2016   16:55
+	filename: 	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\Form\recipe_tree_view.cs
+	file path:	C:\Users\legobrainiac\Documents\Visual Studio 2015\Projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\Form
+	file base:	recipe_tree_view
+	file ext:	cs
+	author:		Tomás António Sanches Pinto
+	
+	purpose:	
+*********************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

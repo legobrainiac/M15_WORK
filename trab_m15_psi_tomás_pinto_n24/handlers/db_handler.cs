@@ -1,5 +1,12 @@
 ﻿/********************************************************************
-	created:	2016/11/17
+    Copyright (C) 2016-2017 Tomás António Sanches Pinto <tomas.antonio.sp@gmail.com>
+     
+    This file is part of M14_14_TomásPinto_24.
+    
+    M14_14_TomásPinto_24 can not be copied and/or distributed without the express
+    permission of Tomás António Sanches Pinto	
+
+    created:	2016/11/17
 	created:	17:11:2016   16:32
 	filename: 	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\db_handler.cs
 	file path:	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24
@@ -52,7 +59,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             }
             catch
             {
-            	
+
             }
         }
 
@@ -75,7 +82,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             {
                 db_connection.Close();
             }
-            catch 
+            catch
             {
                 MessageBox.Show("Could not close connection...");
             }
@@ -138,7 +145,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             instance.query("create view list_players as (select * from players);");
             instance.query("create view list_inventories_items as (select players.name as [Player Name], items.name as [Item Name],inventories.item_count as [Item Count] from inventories inner join players on inventories.id_player = players.id inner join items on inventories.id_item = items.id);");
 
-            
+
         }
 
         //Simple query to the data base
