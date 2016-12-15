@@ -1,4 +1,11 @@
 ﻿/********************************************************************
+    Copyright (C) 2016-2017 Tomás António Sanches Pinto <tomas.antonio.sp@gmail.com>
+     
+    This file is part of M14_14_TomásPinto_24.
+    
+    M14_14_TomásPinto_24 can not be copied and/or distributed without the express
+    permission of Tomás António Sanches Pinto	
+
 	created:	2016/11/22
 	created:	22:11:2016   10:55
 	filename: 	c:\users\legobrainiac\documents\visual studio 2015\projects\trab_m15_psi_tomás_pinto_n24\trab_m15_psi_tomás_pinto_n24\form1.cs
@@ -39,6 +46,7 @@ namespace trab_m15_psi_tomás_pinto_n24
 
         private void listRecipePerItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //
             string sql = "select tbl1.name as Item, tbl2.name as [Crafting Item] from items_recipe inner join items tbl1 on tbl1.id=items_recipe.id_craftable inner join items tbl2 on tbl2.id = items_recipe.id_crafting_item";
             dgv_main.DataSource = db_handler.instance.query(sql);
         }
@@ -109,6 +117,12 @@ namespace trab_m15_psi_tomás_pinto_n24
             Bitmap bm = new Bitmap(dgv_main.Width, dgv_main.Height);
             dgv_main.DrawToBitmap(bm, new Rectangle(0, 0, dgv_main.Width, dgv_main.Height));
             e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void listFullItemCountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string sql = "select items.name as [Name], sum(inventories.item_count) as [Amount] from inventories inner join items on items.id = inventories.id_item group by items.name";
+            dgv_main.DataSource = db_handler.instance.query(sql);
         }
     }
 }

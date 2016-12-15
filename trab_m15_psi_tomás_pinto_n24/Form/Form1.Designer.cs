@@ -42,10 +42,11 @@
             this.giveTakeItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listInventoryPerPlayersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgv_main = new System.Windows.Forms.DataGridView();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgv_main = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.listFullItemCountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_main)).BeginInit();
             this.SuspendLayout();
@@ -153,7 +154,8 @@
             // inventoriesToolStripMenuItem
             // 
             this.inventoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listInventoryPerPlayersToolStripMenuItem});
+            this.listInventoryPerPlayersToolStripMenuItem,
+            this.listFullItemCountToolStripMenuItem});
             this.inventoriesToolStripMenuItem.Name = "inventoriesToolStripMenuItem";
             this.inventoriesToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.inventoriesToolStripMenuItem.Text = "Inventories";
@@ -164,6 +166,13 @@
             this.listInventoryPerPlayersToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.listInventoryPerPlayersToolStripMenuItem.Text = "List inventory per Players";
             this.listInventoryPerPlayersToolStripMenuItem.Click += new System.EventHandler(this.listInventoryPerPlayersToolStripMenuItem_Click);
+            // 
+            // printToolStripMenuItem
+            // 
+            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // dgv_main
             // 
@@ -177,13 +186,6 @@
             this.dgv_main.Size = new System.Drawing.Size(599, 281);
             this.dgv_main.TabIndex = 1;
             // 
-            // printToolStripMenuItem
-            // 
-            this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.printToolStripMenuItem.Text = "Print";
-            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
-            // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
@@ -191,6 +193,13 @@
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
+            // 
+            // listFullItemCountToolStripMenuItem
+            // 
+            this.listFullItemCountToolStripMenuItem.Name = "listFullItemCountToolStripMenuItem";
+            this.listFullItemCountToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.listFullItemCountToolStripMenuItem.Text = "List Full Item Count";
+            this.listFullItemCountToolStripMenuItem.Click += new System.EventHandler(this.listFullItemCountToolStripMenuItem_Click);
             // 
             // frm_main
             // 
@@ -233,6 +242,7 @@
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.ToolStripMenuItem listFullItemCountToolStripMenuItem;
     }
 }
 

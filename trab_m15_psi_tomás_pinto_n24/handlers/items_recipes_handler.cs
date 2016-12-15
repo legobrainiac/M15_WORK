@@ -109,6 +109,7 @@ namespace trab_m15_psi_tomás_pinto_n24
             return item_recipe;
         }
 
+        //To add/change a recipe it will try to delete the old one and add the new one
         public static void AddRecipe(int craftable, int[] crafting_items)
         {
             DeleteRecipe(craftable);
