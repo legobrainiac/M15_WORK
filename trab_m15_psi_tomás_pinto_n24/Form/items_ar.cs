@@ -52,7 +52,14 @@ namespace trab_m15_psi_tomás_pinto_n24
             if (result == DialogResult.OK)
             {
                 filepath = dialog.FileName;
-                pb_image.Image = Image.FromFile(filepath);
+                try
+                {
+                    pb_image.Image = Image.FromFile(filepath);
+                }
+                catch                {
+                    MessageBox.Show("Image of wrong type");
+                }
+                
             }
         }
 

@@ -108,8 +108,12 @@ namespace trab_m15_psi_tomás_pinto_n24
         //Found in http://stackoverflow.com/questions/561174/printing-a-net-datagridview
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            printDialog1.ShowDialog();
-            printDocument1.Print();
+            DialogResult res = printDialog1.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+            
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

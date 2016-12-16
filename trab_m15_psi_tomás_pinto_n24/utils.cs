@@ -18,6 +18,14 @@ namespace trab_m15_psi_tomás_pinto_n24
     {
         static public byte[] ImageToArray(string file)
         {
+            string extension = Path.GetExtension(file).ToUpper();
+
+            System.Console.WriteLine(extension);
+
+            //Quick fix for wrong file types, not preety but works
+            if (extension != ".JPEG" || extension != ".JPG" || extension != ".PNG" || extension != ".BMP")
+                return new byte[0];
+
             byte[] data = null;
 
             try
